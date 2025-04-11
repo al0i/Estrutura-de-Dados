@@ -1,3 +1,6 @@
+import time
+comeco = time.time()
+
 #Pilha de encadeamento simples
 
 class No:
@@ -81,19 +84,17 @@ class Pilha:
     
 #Função usada para testar o código
 def testar():
+    qtde = 100001
     pilha = Pilha()
 
-    pilha.dados()
 
-    for i in range(1,5):
-        if(pilha.add(i)):
-            print("Nó adicionado.")
-
-    pilha.dados()
+    for i in range(1,qtde):
+        pilha.add(i)
 
     while pilha.drop():
-        print("Nó removido")
-    
-    pilha.dados()
+        pass
+
+    fim = time.time()
+    print(fim-comeco)
 
 testar()
